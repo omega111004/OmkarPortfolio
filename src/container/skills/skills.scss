@@ -1,0 +1,130 @@
+:root {
+  --main-color: #ffd600;
+  --bg: #111;
+  --text: #fff;
+  --sub-text: #aaa;
+}
+
+.skills-section {
+  background-color: var(--bg);
+  padding: 80px 20px;
+  text-align: center;
+
+  .skills-title {
+    font-size: 3rem;
+    color: var(--main-color);
+    font-weight: 800;
+    margin-bottom: 50px;
+    text-shadow: 0 3px 12px #ffd60055;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    justify-items: center;
+    padding: 0 20px;
+  }
+
+  .skills-card {
+    background: #1c1c1c;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 0 15px #00000055;
+    width: 100%;
+    max-width: 380px;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+    }
+
+    .skills-category {
+      color: var(--main-color);
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 25px;
+      border-bottom: 2px solid var(--main-color);
+      display: inline-block;
+    }
+
+    .skills-list {
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .skill-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+
+      .skill-icon {
+        font-size: 2rem;
+        color: var(--main-color);
+      }
+
+      .skill-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+
+        p {
+          color: var(--text);
+          font-size: 1.2rem;
+          font-weight: 600;
+        }
+
+        .circle {
+          position: relative;
+          width: 60px;
+          height: 60px;
+
+          svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 60px;
+            height: 60px;
+
+            circle {
+              fill: none;
+              stroke: #222;
+              stroke-width: 4;
+              stroke-dasharray: 176;
+              stroke-linecap: round;
+              transform: rotate(-90deg);
+              transform-origin: center;
+              transition: stroke-dashoffset 0.6s ease-in-out;
+            }
+
+            circle:nth-child(2) {
+              stroke: var(--main-color);
+            }
+          }
+
+          span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .skills-section .skills-title {
+    font-size: 2.2rem;
+  }
+
+  .skills-section .skills-card {
+    padding: 20px;
+  }
+}

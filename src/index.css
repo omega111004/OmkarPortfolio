@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+
+:root {
+  --yellow-theme-background-color: #000000;
+  --yellow-theme-main-color: #ffdd40;
+  --yellow-theme-sub-text-color: #ffffff;
+  --yellow-theme-nav-background-color: #181818;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+html, body, #root {
+  height: 100%;
+  font-family: 'Roboto Slab', serif;
+  background-color: var(--yellow-theme-background-color);
+  color: var(--yellow-theme-sub-text-color);
+  overflow-x: hidden;
+}
+
+.App {
+  position: relative;
+  height: 100%;
+}
+
+/* Floating glow background for pages other than home */
+.background-glow {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 25% 25%, rgba(255, 221, 64, 0.05), transparent 25%),
+              radial-gradient(circle at 75% 75%, rgba(255, 221, 64, 0.1), transparent 25%);
+  animation: rotateBackground 30s linear infinite;
+  z-index: -2;
+}
+
+@keyframes rotateBackground {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.background-wave {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20vh;
+  background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'><path fill='%23ffdd40' fill-opacity='0.2' d='M0,224L60,197.3C120,171,240,117,360,101.3C480,85,600,107,720,122.7C840,139,960,149,1080,144C1200,139,1320,117,1380,106.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'/></svg>") no-repeat bottom;
+  background-size: cover;
+  z-index: -2;
+}
+
+/* Optional floating dots */
+.floating-dots {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -3;
+}
+
+.floating-dots span {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: var(--yellow-theme-main-color);
+  border-radius: 50%;
+  opacity: 0.1;
+  animation: float 10s linear infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) scale(1);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    transform: translateY(-10vh) scale(0.5);
+    opacity: 0;
+  }
+}

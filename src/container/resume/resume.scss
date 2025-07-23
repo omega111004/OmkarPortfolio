@@ -1,0 +1,161 @@
+.resume-section {
+  padding: 60px 20px;
+  background: #1a1a1a;
+  color: #fff;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+
+  .resume-header {
+    text-align: center;
+    margin-bottom: 50px;
+
+    h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      color: #ffd600;
+      margin-bottom: 10px;
+      text-shadow: 0 3px 18px #ffd60033;
+    }
+
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+  }
+
+  .resume-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+
+    .resume-btn {
+       background-color: transparent;
+      color: #ffd600;
+      border: 2px solid #ffd600;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px #ffd60055;
+      animation: popUp 0.6s ease forwards;
+
+      &:hover {
+         background-color: #ffd600;
+          color: #000;
+        transform: translateY(-3px) scale(1.03);
+        box-shadow: 0 6px 16px #ffd600aa;
+      }
+
+      &.download {
+        background-color: transparent;
+        border: 2px solid #ffd600;
+        color: #ffd600;
+
+        &:hover {
+          background-color: #ffd600;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .resume-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+  }
+
+  .resume-box {
+    background: #222;
+    border-left: 5px solid #ffd600;
+    padding: 25px 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 480px;
+    box-shadow: 0 0 15px #00000044;
+    transition: all 0.3s ease;
+
+    h3 {
+      font-size: 1.6rem;
+      color: #ffd600;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .resume-item {
+      margin-bottom: 25px;
+
+      .resume-year {
+        color: #aaa;
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+        display: block;
+      }
+
+      h4 {
+        font-size: 1.2rem;
+        margin: 0;
+        color: #fff;
+      }
+
+      p {
+        font-size: 1rem;
+        color: #bbb;
+        margin: 4px 0 0 0;
+      }
+    }
+  }
+}
+
+// 🎯 Pop-up animation on load
+@keyframes popUp {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// 📱 Responsive layout for mobile
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 40px 16px;
+
+    .resume-header h2 {
+      font-size: 2.2rem;
+    }
+
+    .resume-header p {
+      font-size: 1rem;
+    }
+
+    .resume-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .resume-box {
+      width: 100%;
+      padding: 20px;
+    }
+
+    .resume-buttons .resume-btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
