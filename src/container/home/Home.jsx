@@ -76,7 +76,7 @@ export const Home = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
         >
-          <img src="src\assets\omega.jpg" alt="Profile" className="home__profile-img" />
+          <img src="public\1749326289134 (1).jpeg" alt="Profile" className="home__profile-img" />
         </motion.div>
       </div>
 

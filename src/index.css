@@ -20,6 +20,10 @@ html, body, #root {
   background-color: var(--yellow-theme-background-color);
   color: var(--yellow-theme-sub-text-color);
   overflow-x: hidden;
+  overflow-y: auto;
+  min-height: 100vh;
+
+
 }
 
 .App {

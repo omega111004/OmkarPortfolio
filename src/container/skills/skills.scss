@@ -19,12 +19,13 @@
   }
 
   .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 40px;
-    justify-items: center;
-    padding: 0 20px;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); // reduce min width
+  gap: 40px;
+  justify-items: center;
+  padding: 0 20px;
+}
+
 
   .skills-card {
     background: #1c1c1c;
@@ -57,6 +58,7 @@
     .skill-item {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       gap: 20px;
 
       .skill-icon {
@@ -119,12 +121,109 @@
   }
 }
 
+/* Tablet (≤768px) */
+@media (max-width: 768px) {
+  .skills-section {
+    padding: 60px 10px;
+
+    .skills-title {
+      font-size: 2.4rem;
+      margin-bottom: 40px;
+    }
+
+    .skills-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .skills-card {
+      padding: 24px;
+
+      .skills-category {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+      }
+
+      .skills-list {
+        gap: 20px;
+      }
+
+      .skill-item {
+        flex-direction: row;
+        align-items: center;
+
+        .skill-icon {
+          font-size: 1.8rem;
+        }
+
+        .skill-info {
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+
+          p {
+            font-size: 1rem;
+          }
+
+          .circle {
+            width: 50px;
+            height: 50px;
+
+            svg {
+              width: 50px;
+              height: 50px;
+            }
+
+            span {
+              font-size: 0.75rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Mobile phones (≤480px) */
 @media (max-width: 600px) {
-  .skills-section .skills-title {
+  .skills-section {
+    padding: 60px 10px;
+  }
+
+  .skills-title {
     font-size: 2.2rem;
   }
 
-  .skills-section .skills-card {
+  .skills-grid {
+    grid-template-columns: 1fr; // force one column
+    gap: 30px;
+    padding: 0;
+  }
+
+  .skills-card {
     padding: 20px;
+    max-width: 100%; // allow full width
+  }
+
+  .skill-info p {
+    font-size: 1rem;
+  }
+
+  .skill-icon {
+    font-size: 1.5rem;
+  }
+
+  .circle {
+    width: 50px;
+    height: 50px;
+
+    svg {
+      width: 50px;
+      height: 50px;
+    }
+
+    span {
+      font-size: 0.75rem;
+    }
   }
 }

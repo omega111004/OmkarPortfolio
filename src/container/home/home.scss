@@ -33,7 +33,7 @@
   min-width: 300px;
 
   .home__title {
-    font-size: clamp(3rem, 6vw, 5rem); // Increased from 2rem–3.5rem to 3rem–5rem
+    font-size: clamp(2rem, 5vw, 4rem); // Increased from 2rem–3.5rem to 3rem–5rem
     font-weight: bold;
     background: linear-gradient(90deg, #ffdd40, #ffffff);
     background-clip: text;
@@ -73,8 +73,8 @@
     min-width: 250px;
 
     .home__profile-img {
-      width: 500px; // increased from 260px
-      height: 500px;
+      width: 350px; // increased from 260px
+      height: 350px;
       object-fit: cover;
       border-radius: 50%;
       border: 4px solid var(--yellow-theme-main-color);
@@ -177,4 +177,68 @@
   background: url("data:image/svg+xml;utf8,<svg viewBox='0 0 1440 320' xmlns='http://www.w3.org/2000/svg'><path fill='%23ffdd40' fill-opacity='0.2' d='M0,224L60,197.3C120,171,240,117,360,101.3C480,85,600,107,720,122.7C840,139,960,149,1080,144C1200,139,1320,117,1380,106.7L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z'/></svg>") no-repeat bottom;
   background-size: cover;
   z-index: -2;
+}
+
+/* Responsive Media Queries */
+@media screen and (max-width: 1024px) {
+  .home__container {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .home__left,
+  .home__right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .home__right .home__profile-img {
+    width: 280px;
+    height: 280px;
+    margin-bottom: 30px;
+  }
+
+  .home__left .home__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+  }
+
+  .home__left .home__role {
+    font-size: 1.5rem;
+  }
+
+  .home__social-icons {
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .home {
+    padding: 60px 20px;
+  }
+
+  .home__left .home__title {
+    font-size: 2rem;
+  }
+
+  .home__left .home__role {
+    font-size: 1.2rem;
+  }
+
+  .home__social-icons a {
+    font-size: 1.5rem;
+  }
+
+  .home__right .home__profile-img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .scroll-down-indicator {
+    bottom: 10px;
+
+    span {
+      width: 5px;
+      height: 5px;
+    }
+  }
 }

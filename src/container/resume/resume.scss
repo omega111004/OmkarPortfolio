@@ -1,9 +1,16 @@
+body,
+html {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
 .resume-section {
   padding: 60px 20px;
   background: #1a1a1a;
   color: #fff;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
+  overflow: visible;
 
   .resume-header {
     text-align: center;
@@ -31,7 +38,7 @@
     flex-wrap: wrap;
 
     .resume-btn {
-       background-color: transparent;
+      background-color: transparent;
       color: #ffd600;
       border: 2px solid #ffd600;
       padding: 12px 22px;
@@ -47,8 +54,8 @@
       animation: popUp 0.6s ease forwards;
 
       &:hover {
-         background-color: #ffd600;
-          color: #000;
+        background-color: #ffd600;
+        color: #000;
         transform: translateY(-3px) scale(1.03);
         box-shadow: 0 6px 16px #ffd600aa;
       }
@@ -72,6 +79,7 @@
     flex-wrap: wrap;
     gap: 40px;
     margin-top: 40px;
+    min-height: 300px;
   }
 
   .resume-box {
@@ -118,7 +126,7 @@
   }
 }
 
-// 🎯 Pop-up animation on load
+// Pop-up animation
 @keyframes popUp {
   from {
     transform: scale(0.9);
@@ -130,8 +138,8 @@
   }
 }
 
-// 📱 Responsive layout for mobile
-@media (max-width: 768px) {
+// 📱 Responsive styles
+@media (max-width: 990px) {
   .resume-section {
     padding: 40px 16px;
 
@@ -149,7 +157,8 @@
     }
 
     .resume-box {
-      width: 100%;
+      width: 100% !important;
+      max-width: 100%;
       padding: 20px;
     }
 

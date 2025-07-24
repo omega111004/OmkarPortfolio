@@ -38,7 +38,7 @@ const Resume = () => {
         <p>A snapshot of my educational background and certifications.</p>
         <div className="resume-buttons">
           <a
-            href="/Omkar_Chaudhari_Resume.pdf" 
+            href="/Omkar_Chaudhari_Resume.pdf"
             className="resume-btn"
             target="_blank"
             rel="noopener noreferrer"
@@ -46,7 +46,7 @@ const Resume = () => {
             <FiEye /> View Resume
           </a>
           <a
-            href="/Omkar_Chaudhari_Resume.pdf" 
+            href="/Omkar_Chaudhari_Resume.pdf"
             className="resume-btn download"
             download
           >
@@ -56,7 +56,7 @@ const Resume = () => {
       </div>
 
       <div className="resume-container">
-        <div className="resume-box" data-aos="fade-right">
+        <div className="resume-box" data-aos="fade-up">
           <h3>
             <FaGraduationCap /> Education
           </h3>
@@ -69,7 +69,7 @@ const Resume = () => {
           ))}
         </div>
 
-        <div className="resume-box" data-aos="fade-left">
+        <div className="resume-box" data-aos="fade-up">
           <h3>
             <FaCertificate /> Certifications
           </h3>
